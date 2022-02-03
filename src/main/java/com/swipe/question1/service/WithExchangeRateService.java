@@ -48,9 +48,9 @@ public class WithExchangeRateService {
         amountReturnObject.setIntlBankToLocalBankCharges((inputPrincipal*1.5)/98.5);
         inputPrincipal += (inputPrincipal*1.5)/98.5;
         
-        temp = getPaypalTransferToExternalAccountsCharges(inputPrincipal);
-        amountReturnObject.setPaypalToOuterChannelsCharges(temp);
-        inputPrincipal+= temp;
+        
+        amountReturnObject.setPaypalToOuterChannelsCharges((input*3)/97);
+        inputPrincipal+= (input*3)/97;
         
         amountReturnObject.setAmountToBeLoaded(inputPrincipal);
         
@@ -58,18 +58,5 @@ public class WithExchangeRateService {
         amountReturnObject.setExchangeRate(100);
         
         return amountReturnObject;
-    }
-    
-    
-    //add offshore bank account charges
-    public double getIntlBankToLocalBankCharges(double input){
-        return (input*1.5)/98.5;
-    }
-    
-    //add charges of paypal to offshore bank
-    public double getPaypalTransferToExternalAccountsCharges(double input){
-        return (input*3)/97;
-    }
-    
-    
+    }  
 }

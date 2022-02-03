@@ -49,8 +49,8 @@ public class WithExchangeRateService {
         inputPrincipal += (inputPrincipal*1.5)/98.5;
         
         
-        amountReturnObject.setPaypalToOuterChannelsCharges((input*3)/97);
-        inputPrincipal+= (input*3)/97;
+        amountReturnObject.setPaypalToOuterChannelsCharges((inputPrincipal*3)/97);
+        inputPrincipal+= (inputPrincipal*3)/97;
         
         amountReturnObject.setAmountToBeLoaded(inputPrincipal);
         

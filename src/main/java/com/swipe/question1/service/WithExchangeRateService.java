@@ -20,7 +20,6 @@ public class WithExchangeRateService {
     AmountReturnObject amountReturnObject;
     double mpesaCharge = 22.0;
     public AmountReturnObject doCalculate(AmountObject inputObject){
-        double temp;
         
         //this is the amount entered
         double inputPrincipal = inputObject.getAmount();

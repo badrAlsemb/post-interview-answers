@@ -19,39 +19,39 @@ public class WithExchangeRateService {
     
     
     public AmountReturnObject doCalculate(AmountObject inputObject){
-        AmountReturnObject amountReturnObject = new AmountReturnObject();
+        AmountReturnObject calculatedReturnObject = new AmountReturnObject();
         
         //this is the amount entered
         double inputPrincipal = inputObject.getAmount();
         System.out.println("InputPrincipal: "+ inputPrincipal);
         
         
-        amountReturnObject.setInputPrincipal(inputPrincipal);
+        calculatedReturnObject.setInputPrincipal(inputPrincipal);
         
         //append charges in reverse
-        amountReturnObject.setMpesaCharges(22.0);
+        calculatedReturnObject.setMpesaCharges(22.0);
         inputPrincipal += 22.0;
         
         //add company charges
-        amountReturnObject.setCompanyCharges((inputPrincipal * 2) / 98);
+        calculatedReturnObject.setCompanyCharges((inputPrincipal * 2) / 98);
         inputPrincipal += (inputPrincipal * 2) / 98;
         
-        amountReturnObject.setLocalBankTransferCharges(40.0);
+        calculatedReturnObject.setLocalBankTransferCharges(40.0);
         inputPrincipal += 40.0;
         
         
-        amountReturnObject.setIntlBankToLocalBankCharges((inputPrincipal*1.5)/98.5);
+        calculatedReturnObject.setIntlBankToLocalBankCharges((inputPrincipal*1.5)/98.5);
         inputPrincipal += (inputPrincipal*1.5)/98.5;
         
         
-        amountReturnObject.setPaypalToOuterChannelsCharges((inputPrincipal*3)/97);
+        calculatedReturnObject.setPaypalToOuterChannelsCharges((inputPrincipal*3)/97);
         inputPrincipal+= (inputPrincipal*3)/97;
         
-        amountReturnObject.setAmountToBeLoaded(inputPrincipal);
+        calculatedReturnObject.setAmountToBeLoaded(inputPrincipal);
         
         //add exchange rate
-        amountReturnObject.setExchangeRate(100);
+        calculatedReturnObject.setExchangeRate(100);
         
-        return amountReturnObject;
+        return calculatedReturnObject;
     }  
 }

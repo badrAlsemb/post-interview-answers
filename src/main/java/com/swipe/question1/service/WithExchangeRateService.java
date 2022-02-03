@@ -37,7 +37,7 @@ public class WithExchangeRateService {
         //append charges in reverse
         amountReturnObject.setMpesaCharges(mpesaCharge);
         inputPrincipal += mpesaCharge;
-        temp = getCompanyCharges(inputPrincipal);
+        temp = (inputPrincipal * 2) / 98;
         amountReturnObject.setCompanyCharges(temp);
         inputPrincipal += temp;
         amountReturnObject.setLocalBankTransferCharges(localBankTransferCharges);
@@ -57,10 +57,6 @@ public class WithExchangeRateService {
         return amountReturnObject;
     }
     
-    //add company charges
-    public double getCompanyCharges(double inputPrincipal){
-        return (inputPrincipal*2)/98;
-    }
     
     //add offshore bank account charges
     public double getIntlBankToLocalBankCharges(double input){

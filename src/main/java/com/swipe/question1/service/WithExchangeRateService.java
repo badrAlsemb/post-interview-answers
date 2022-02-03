@@ -17,20 +17,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class WithExchangeRateService {
     
-    AmountReturnObject amountReturnObject;
+    
     public AmountReturnObject doCalculate(AmountObject inputObject){
+        AmountReturnObject amountReturnObject = new AmountReturnObject();
         
         //this is the amount entered
         double inputPrincipal = inputObject.getAmount();
         System.out.println("InputPrincipal: "+ inputPrincipal);
         
-        //to try and save mem from different objects
-        //only instantiate if non-existent
-        if(amountReturnObject == null){
-            amountReturnObject = new AmountReturnObject();
-        }
         
         amountReturnObject.setInputPrincipal(inputPrincipal);
+        
         //append charges in reverse
         amountReturnObject.setMpesaCharges(22.0);
         inputPrincipal += 22.0;

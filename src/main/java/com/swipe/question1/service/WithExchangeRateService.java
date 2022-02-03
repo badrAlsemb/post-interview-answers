@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 public class WithExchangeRateService {
     
     AmountReturnObject amountReturnObject;
-    double mpesaCharge = 22.0;
     public AmountReturnObject doCalculate(AmountObject inputObject){
         
         //this is the amount entered
@@ -33,8 +32,8 @@ public class WithExchangeRateService {
         
         amountReturnObject.setInputPrincipal(inputPrincipal);
         //append charges in reverse
-        amountReturnObject.setMpesaCharges(mpesaCharge);
-        inputPrincipal += mpesaCharge;
+        amountReturnObject.setMpesaCharges(22.0);
+        inputPrincipal += 22.0;
         
         //add company charges
         amountReturnObject.setCompanyCharges((inputPrincipal * 2) / 98);

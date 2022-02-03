@@ -19,7 +19,6 @@ public class WithExchangeRateService {
     
     AmountReturnObject amountReturnObject;
     double mpesaCharge = 22.0;
-    double localBankTransferCharges = 40.0;
     public AmountReturnObject doCalculate(AmountObject inputObject){
         double temp;
         
@@ -42,8 +41,9 @@ public class WithExchangeRateService {
         amountReturnObject.setCompanyCharges((inputPrincipal * 2) / 98);
         inputPrincipal += (inputPrincipal * 2) / 98;
         
-        amountReturnObject.setLocalBankTransferCharges(localBankTransferCharges);
-        inputPrincipal += localBankTransferCharges;
+        amountReturnObject.setLocalBankTransferCharges(40.0);
+        inputPrincipal += 40.0;
+        
         temp = getIntlBankToLocalBankCharges(inputPrincipal);
         amountReturnObject.setIntlBankToLocalBankCharges(temp);
         inputPrincipal += temp;

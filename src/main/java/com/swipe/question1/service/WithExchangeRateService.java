@@ -44,9 +44,10 @@ public class WithExchangeRateService {
         amountReturnObject.setLocalBankTransferCharges(40.0);
         inputPrincipal += 40.0;
         
-        temp = getIntlBankToLocalBankCharges(inputPrincipal);
-        amountReturnObject.setIntlBankToLocalBankCharges(temp);
-        inputPrincipal += temp;
+        
+        amountReturnObject.setIntlBankToLocalBankCharges((inputPrincipal*1.5)/98.5);
+        inputPrincipal += (inputPrincipal*1.5)/98.5;
+        
         temp = getPaypalTransferToExternalAccountsCharges(inputPrincipal);
         amountReturnObject.setPaypalToOuterChannelsCharges(temp);
         inputPrincipal+= temp;
